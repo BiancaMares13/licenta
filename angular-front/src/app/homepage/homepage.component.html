@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
+
+
+<div class=" left-div">
+
+  <label>Select month: </label>
+  <select id="month"  name="month" style="width: 50%" [(ngModel)]="searchArguments.month">
+  <option value="noValue" id="noValue"> </option>
+  <option value="JANUARY" id="valueJan">JANUARY</option>
+  <option value="FEBRUARY" id="valueFeb">FEBRUARY</option>
+  <option value="MARCH" id="valueMarc">MARCH</option>
+  <option value="APRIL" id="valueApril">APRIL</option>
+  <option value="MAY" id="valueMay">MAY</option>
+  <option value="JUNE" id="valueJun">JUNE</option>
+  <option value="JULY" id="valueJul">JULY</option>
+  <option value="AUGUST" id="valueAug">AUGUST</option>
+  <option value="SEPTEMBER" id="valueSep">SEPTEMBER</option>
+  <option value="OCTOBER" id="valueOct">OCTOBER</option>
+  <option value="NOVEMBER" id="valueNov">NOVEMBER</option>
+  <option value="DECEMBER" id="valueDec">DECEMBER</option>
+
+</select>
+  <br/>
+  <br/>
+  <div class="input-group" style="width: 50%">
+    <input id="search-box"
+           class="inputText" type="text" class="form-control" [(ngModel)]="searchArguments.cloudCoverage"
+           placeholder="Cloud coverage"/>
+  </div>
+  <br/>
+  <label>Search between </label> <br/>
+  <input type="date" name="firstDate" [(ngModel)]="searchArguments.dateStart"/>
+  <label>and</label>
+  <input type="date" name="second" [(ngModel)]="searchArguments.dateEnd"/><br/><br/>
+  <label>Sentinel: </label>
+  <select id="Sentinel" name="Sentinel" style="width: 55%" [(ngModel)]="searchArguments.platformName">
+    <option value="all" id="all"></option>
+    <option value="s1" id="s1">Sentinel 1</option>
+    <option value="s2" id="s2">Sentinel 2</option>
+    <option value="s3" id="s3">Sentinel 3</option>
+
+  </select>
+  <br/>
+  <br/>
+
+  <span class="glyphicon glyphicon-search"></span>
+  <button type="submit" class="buttonClass2" (click)="doSearch()">Search and select images</button>
+</div>
+
+<div class="buttons-div">
+  <span class="glyphicon glyphicon-download-alt"></span>
+  <button type="submit" class="buttonClass">Download images</button>
+  <br/><br/>
+  <span class="glyphicon glyphicon-pushpin"> </span>
+  <button type="submit" class="buttonClass" (click)="recenter()">Re-center</button>
+  <br/><br/>
+  <button type="submit" class="buttonClass">Operation2</button>
+
+</div>
+<div class="mapDiv">
+  <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
+</div>
+
+

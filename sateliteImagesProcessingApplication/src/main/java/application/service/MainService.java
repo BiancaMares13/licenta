@@ -1,5 +1,6 @@
 package application.service;
 
+import application.entity.Args;
 import application.entity.Product;
 import org.apache.http.HttpResponse;
 import org.apache.http.auth.AuthScope;
@@ -30,7 +31,9 @@ import java.util.List;
 public class MainService {
 
 
-    public List<Product> getProductList() {
+    public List<Product> getProductList(Args arguments) {
+        
+        String urlString=constructURLString(arguments);
         CredentialsProvider provider = new BasicCredentialsProvider();
         List<Product> products = new ArrayList<>();
         String username="";
@@ -83,4 +86,12 @@ public class MainService {
 
         return products;
 }
+
+    private String constructURLString(Args arguments) {
+        String query="https://scihub.copernicus.eu/dhus/search?";
+        // https://scihub.copernicus.eu/dhus/odata/v1/Products?$filter=year(IngestionDate) eq 2017 and month(IngestionDate) eq 12
+        //https://scihub.copernicus.eu/dhus/search?q=platformname:Sentinel-1
+        if(arguments.getMonth()!=null&&arguments.getMonth()!=""){}
+        return null;
+    }
 }
