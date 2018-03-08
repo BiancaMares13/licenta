@@ -1,26 +1,22 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-
-
-
-
 <div class=" left-div">
-
+<form>
   <label>Select month: </label>
   <select id="month"  name="month" style="width: 50%" [(ngModel)]="searchArguments.month">
-  <option value="noValue" id="noValue"> </option>
-  <option value="JANUARY" id="valueJan">JANUARY</option>
-  <option value="FEBRUARY" id="valueFeb">FEBRUARY</option>
-  <option value="MARCH" id="valueMarc">MARCH</option>
-  <option value="APRIL" id="valueApril">APRIL</option>
-  <option value="MAY" id="valueMay">MAY</option>
-  <option value="JUNE" id="valueJun">JUNE</option>
-  <option value="JULY" id="valueJul">JULY</option>
-  <option value="AUGUST" id="valueAug">AUGUST</option>
-  <option value="SEPTEMBER" id="valueSep">SEPTEMBER</option>
-  <option value="OCTOBER" id="valueOct">OCTOBER</option>
-  <option value="NOVEMBER" id="valueNov">NOVEMBER</option>
-  <option value="DECEMBER" id="valueDec">DECEMBER</option>
+  <option value="" id="noValue"> </option>
+  <option value="01" id="valueJan">JANUARY</option>
+  <option value="02" id="valueFeb">FEBRUARY</option>
+  <option value="03" id="valueMarc">MARCH</option>
+  <option value="04" id="valueApril">APRIL</option>
+  <option value="05" id="valueMay">MAY</option>
+  <option value="06" id="valueJun">JUNE</option>
+  <option value="07" id="valueJul">JULY</option>
+  <option value="08" id="valueAug">AUGUST</option>
+  <option value="09" id="valueSep">SEPTEMBER</option>
+  <option value="10" id="valueOct">OCTOBER</option>
+  <option value="11" id="valueNov">NOVEMBER</option>
+  <option value="12" id="valueDec">DECEMBER</option>
 
 </select>
   <br/>
@@ -28,7 +24,7 @@
   <div class="input-group" style="width: 50%">
     <input id="search-box"
            class="inputText" type="text" class="form-control" [(ngModel)]="searchArguments.cloudCoverage"
-           placeholder="Cloud coverage"/>
+           placeholder="Cloud coverage" name="cloudCoverage"/>
   </div>
   <br/>
   <label>Search between </label> <br/>
@@ -48,6 +44,7 @@
 
   <span class="glyphicon glyphicon-search"></span>
   <button type="submit" class="buttonClass2" (click)="doSearch()">Search and select images</button>
+</form>
 </div>
 
 <div class="buttons-div">

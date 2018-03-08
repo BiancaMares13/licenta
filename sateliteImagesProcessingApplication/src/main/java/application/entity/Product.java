@@ -1,50 +1,30 @@
 package application.entity;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import java.util.Date;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
 
-    private String idProduct;
-    private String titleProduct;
-    private String quickLook;
-    private String creationDate;
-    private String ingestionDate;
+    @XmlElement(name="title")
+    private String title;
+    @XmlElement(name="summary")
+    private String summary;
+    @XmlElement(name="ingestiondate")
+    private Date ingestiondate;
+    @XmlElement(name="filename")
+    private String filename;
+    @XmlElement(name="orbitdirection")
+    private String orbitdirection;
+    @XmlElement(name="platformname")
+    private String platformname;
+    @XmlElement(name="instrumentname")
+    private String instrumentname;
+    @XmlElement(name="size")
+    private String size;
+    @XmlElement(name="uuid")
+    private String uuid;
 
-    public String getIdProduct() {
-        return idProduct;
-    }
-
-    public void setIdProduct(String idProduct) {
-        this.idProduct = idProduct;
-    }
-
-    public String getTitleProduct() {
-        return titleProduct;
-    }
-
-    public void setTitleProduct(String titleProduct) {
-        this.titleProduct = titleProduct;
-    }
-
-    public String getQuickLook() {
-        return quickLook;
-    }
-
-    public void setQuickLook(String quickLook) {
-        this.quickLook = quickLook;
-    }
-
-    public String getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationdate(String creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public String getIngestionDate() {
-        return ingestionDate;
-    }
-
-    public void setIngestionDate(String ingestionDate) {
-        this.ingestionDate = ingestionDate;
-    }
 }

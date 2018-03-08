@@ -1,8 +1,13 @@
 export class Product {
-  idProduct: string;
-  titleProduct: string;
-  quickLook: string;
-  creationDate: string;
-  ingestionDate: string;
 
+  title: string;
+  summary: string;
+  ingestiondate: string;
+  filename: string;
+  orbitdirection: string;
+  platformname: string;
+  instrumentname:string;
+  size: string;
+  uuid: string;
+  cloudcoverpercentage:string;
 }

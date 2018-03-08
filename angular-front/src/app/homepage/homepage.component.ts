@@ -20,6 +20,7 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 
@@ -32,6 +33,7 @@ export class HomepageComponent implements OnInit {
     this.mainService.doSearch(this.searchArguments).subscribe(resp=>{
       this.searchResult=resp;
     })
+    console.log(this.searchResult);
   }
 
   recenter() {

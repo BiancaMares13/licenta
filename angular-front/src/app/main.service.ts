@@ -13,7 +13,7 @@ export class MainService {
   }
 
   doSearch(args: Args):Observable<Product[]>{
-    const body=JSON.stringify({args});
+    const body=JSON.stringify(args);
     return this.http.post<Product[]>("http://localhost:8080/doSearch",body, this.httpOptions);
   }
 
